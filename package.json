@@ -1,0 +1,32 @@
+{
+  "name": "swgohub",
+  "version": "1.0.0",
+  "description": "GET TO THE CHOPPAH",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars views/partials/charImage.handlebars -f public/js/charimgTemplate.js",
+    "start": "node _server.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hydra314/swgohub.git"
+  },
+  "author": "Cameron Kocher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hydra314/swgohub/issues"
+  },
+  "homepage": "https://github.com/hydra314/swgohub#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11"
+  }
+}

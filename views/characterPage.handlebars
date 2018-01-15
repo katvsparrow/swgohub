@@ -1,0 +1,74 @@
+{{> charPageHeader}}
+{{> menubar}}
+
+<main class="character-page">
+	
+	<section class="info">
+		
+		<div class="section-header-container">
+			<div class="section-header-image-container">
+				{{> charPageImage}}
+			</div>
+			
+			<h2 class="section-header">{{name}}</h2>
+		</div>
+
+		<div class="section-content-container">
+
+			<h3 id="alignment"><b>Alignment:</b>
+				{{#ifEquals alignment 'LS'}}Light Side{{/ifEquals}}
+				{{#ifEquals alignment 'DS'}}Dark Side{{/ifEquals}}
+			</h3>
+
+			<h3 id="factions"><b>Factions:</b>
+				<ul class="faction-list">{{#each faction}}
+					<li><h4>{{this}}</h4></li> 
+				{{/each}}</ul>
+			</h3>
+
+			<p class="description">{{description}}</p>
+
+			{{> swgohggLink}}
+
+		</div>
+
+	</section>
+
+	<section class="ratings">
+
+		<div class="section-header-container">
+			<h2 class="section-header">Character Ratings</h2>
+		</div>
+
+		<div class="section-content-container">
+			<h3 id="ahnald-rating"><b>Ahnald's Hall of Fame:</b> {{rank}}</h3>
+
+			<h3 class="accordion"><b>CubsFanHan's Monthly Top 15:</b></h3>
+			<div class="panel">
+				<ul class="cubs-top-15-list">
+					<li><h4>July 2017: {{#if CubsJuly17}}{{CubsJuly17}}{{else}}N/A{{/if}}</h4></li>
+					<li><h4>August 2017: {{#if CubsAugust17}}{{CubsAugust17}}{{else}}N/A{{/if}}</h4></li>
+					<li><h4>September 2017: {{#if CubsSeptember17}}{{CubsSeptember17}}{{else}}N/A{{/if}}</h4></li>
+					<li><h4>October 2017: {{#if CubsOctober17}}{{CubsOctober17}}{{else}}N/A{{/if}}</h4></li>
+					<li><h4>November 2017: {{#if CubsNovember17}}{{CubsNovember17}}{{else}}N/A{{/if}}</h4></li>
+					<li><h4>December 2017: {{#if CubsDecember17}}{{CubsDecember17}}{{else}}N/A{{/if}}</h4></li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="videos">
+		<div class="section-header-container">
+			<h2 class="section-header">Videos</h2>
+		</div>
+
+		<div class="section-content-container">
+			<center><iframe style="margin-top: 10%" width="75%" height="75%" src="{{video}}"></iframe></center>
+		</div>
+	
+	</section>
+
+</main>
+
+{{> footer}}
