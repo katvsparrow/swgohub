@@ -39,13 +39,11 @@
 	--sw-red: #B03334;
 }
 
-.grad {
-  background: black; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, black, #303030); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, black, #303030); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, black, #303030); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, black, #303030); /* Standard syntax */
-}
+html { box-sizing: border-box; }
+
+*,
+*::before,
+*::after { box-sizing: inherit; }
 
 body {
 	font-family: Franklin Gothic Book, sans-serif;
@@ -55,6 +53,13 @@ body {
   background-color: black;
   background-position: left center;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.grad { background: linear-gradient(to right, black, #303030); }
 
 a {
   text-decoration: none;
@@ -115,17 +120,19 @@ header a {
 }
 
 .content {
-  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filter-container {
-  min-width: 225px;
+/*   min-width: 225px;
   max-width: 225px;
-  margin: 10px 10px auto 10px;
+  margin: 10px 10px auto 10px; */
   padding: 20px;
   border-radius: 3px;
   background-color: #36393E;
   color: white;
+  margin-bottom: 20px;
 }
 
 .filter-container h2 {
@@ -181,12 +188,7 @@ header a {
  * Menu bar
  */
  
-.menubar {
-	position: relative;
-	left: 0px;
-	margin-bottom: 10px;
-  padding-bottom: 0;
-}
+.menubar { margin-bottom: 20px; }
  
 .menubar ul {
   list-style-type: none;
@@ -274,13 +276,14 @@ li a:hover {
   font-family: Starjedi Hollow;
 	font-size: 26px;
 	border-collapse: collapse;
-	left: 10px;
-	top: 10px;
+  width: 100%;
+/* 	left: 10px;
+	top: 10px; */
 	color: white;
-  position: relative;
-  float: left;
+  /* position: relative; */
+/*   float: left;
   margin-bottom: 10%;
-  empty-cells: show;
+  empty-cells: show; */
  }
  
 .character-ranking-table table {
@@ -294,26 +297,27 @@ li a:hover {
  }
  
 .character-ranking-table td {
-	text-align: center;
-	padding: 5px;
-  min-width: 65px;
-  min-height: 65px;
-  margin: 0;
- }
- 
-/*.character-ranking-table td:nth-child(3n + 0) {
-	 border-right: 3px solid white;
- }*/
- 
+  text-align: center;
+  padding: 10px;
+}
+
+.character-ranking-table tr:nth-child(2) td { padding-top: 20px; }
+
+.character-ranking-table tr:last-child td { padding-bottom: 20px; }
+
+.character-ranking-table tr td:first-child { padding-left: 20px; }
+
+.character-ranking-table tr td:last-child { padding-right: 20px; }
+
+.charcter-link { display: block; }
+
 /*
  * Character portraits
  */
- img.ranking-table-character {
+ .ranking-table-character {
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  margin: 1px;
- }
+  margin: 0 auto;
+}
 
  img.character-page-character {
   border-radius: 50%;
@@ -377,7 +381,7 @@ footer {
 
 .tooltip-left {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .tooltip-right {
@@ -399,7 +403,7 @@ footer {
   top: -5px;
   right: 105%;
   font-size: 16px;
-  font-family: Times New Roman;
+  font-family: sans-serif;
 }
 
 .tooltip-right .tooltiptext-right {
