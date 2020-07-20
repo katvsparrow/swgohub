@@ -1,1 +1,1 @@
-http://www.swgohub.com
+http://www.swgohub.herokuapp.com
